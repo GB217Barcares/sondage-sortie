@@ -2,7 +2,23 @@
 const DATES = [{id:'2026-12-04',short:'04/12'},{id:'2026-12-11',short:'11/12'},{id:'2026-12-18',short:'18/12'}];
 const $ = id => document.getElementById(id);
 const config = window.SONDAGE_CONFIG || {};
-const configured = /^https:\/\/[a-z0-9-]+\.supabase\.co\/?$/i.test(config.supabaseUrl||'') && config.supabaseKey && !config.supabaseKey.includes('VOTRE_');
+
+config.supabaseUrl = String(config.supabaseUrl || '')
+  .trim()
+  .replace(/\/rest\/v1\/?$/i, '')
+  .replace(/\/+$/, '');
+
+config.supabaseKey = String(config.supabaseKey || '').trim();
+
+const configured =
+  /^https:\/\/[a-z0-9-]+\.supabase\.co$/i.test(config.supabaseUrl) &&
+  config.supabaseKey.length > 20 &&
+  !config.supabaseKey.includes('VOTRE_');
+
+console.log('Configuration Supabase :', {
+  url: config.supabaseUrl,
+  configured: configured
+});
 const storageKey = 'sortie-sondage-2026-vote-token';
 let currentToken = localStorage.getItem(storageKey);
 let saving = false;
