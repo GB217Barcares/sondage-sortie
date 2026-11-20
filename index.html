@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#08071e">
   <meta name="description" content="Sondage pour choisir une sortie et une date en décembre 2026.">
-  <title>Notre sortie • Sondage</title>
+  <title>• Sondage Repas Hiver</title>
   <link rel="stylesheet" href="style.css">
   <script src="config.js" defer></script>
   <script src="app.js" defer></script>
@@ -15,9 +15,9 @@
   <main class="shell">
     <header class="hero">
       <div class="eyebrow"><span class="dot"></span> SONDAGE COLLECTIF · DÉCEMBRE 2026</div>
-      <h1>On se fait <em>une sortie ?</em></h1>
+      <h1>A vous  <em>de choisir ?</em></h1>
       <p>Choisis tes activités préférées et toutes les dates où tu es disponible. Plusieurs réponses sont possibles !</p>
-      <div class="hero-chips"><span>🎯 2 activités</span><span>📅 3 vendredis</span><span>📊 Résultats partagés</span></div>
+      <div class="hero-chips"><span> 2 activités</span><span>📅 3 vendredis</span><span>📊 Résultats partagés</span></div>
     </header>
 
     <div id="setupNotice" class="notice" hidden>⚙️ Configuration requise : renseigne <strong>config.js</strong> avec ton URL et ta clé publique Supabase.</div>
@@ -27,12 +27,12 @@
       <section class="panel voting" aria-labelledby="voteTitle">
         <div class="section-top"><span class="section-number">01</span><div><h2 id="voteTitle">À toi de voter</h2><p>Un prénom et tes disponibilités suffisent.</p></div></div>
         <form id="voteForm">
-          <label class="field-label" for="name">Ton prénom / nom <span>*</span></label>
+          <label class="field-label" for="name">Ton prénom <span>*</span></label>
           <input id="name" name="name" type="text" maxlength="70" autocomplete="name" placeholder="Ex. Camille Dupont" required>
           <div class="field-head"><h3>Quelle activité te tente ?</h3><span>Plusieurs choix possibles</span></div>
           <div class="activities">
-            <label class="activity"><input type="checkbox" id="petanque" name="activity" value="petanque"><span class="activity-body"><span class="activity-icon">🎯</span><strong>Pétanque</strong><small>L'Atmosphère · Saint-Ferréol<br>Terrain couvert</small></span><span class="tick">✓</span></label>
-            <label class="activity"><input type="checkbox" id="escape" name="activity" value="escape"><span class="activity-body"><span class="activity-icon">🔐</span><strong>Escape game</strong><small>En équipe · Lieu à définir<br>Énigmes & défis</small></span><span class="tick">✓</span></label>
+            <label class="activity"><input type="checkbox" id="petanque" name="activity" value="petanque"><span class="activity-body"><span class="activity-icon">⚫⚪</span><strong>Pétanque</strong><small>L'Atmosphère · Saint-Ferréol<br>Terrain couvert</small></span><span class="tick">✓</span></label>
+            <label class="activity"><input type="checkbox" id="escape" name="activity" value="escape"><span class="activity-body"><span class="activity-icon">🕵</span><strong>Escape game</strong><small>En équipe · Lieu à définir<br>Restaurant à définir</small></span><span class="tick">✓</span></label>
           </div>
           <div class="field-head"><h3>Quand es-tu disponible ?</h3><span>Coche toutes tes dates</span></div>
           <div class="dates">
@@ -49,7 +49,7 @@
       <section class="results" aria-labelledby="resultsTitle">
         <div class="panel dashboard">
           <div class="results-head"><div><span class="section-number">02</span><h2 id="resultsTitle">Les résultats</h2><p>Les votes de tout le groupe</p></div><button id="refreshButton" class="refresh" type="button" title="Actualiser les résultats">↻ Actualiser</button></div>
-          <div class="stats"><div class="stat"><strong id="participantCount">—</strong><span>Participants</span></div><div class="stat"><strong id="petanqueCount">—</strong><span>🎯 Pétanque</span></div><div class="stat"><strong id="escapeCount">—</strong><span>🔐 Escape game</span></div></div>
+          <div class="stats"><div class="stat"><strong id="participantCount">—</strong><span>Participants</span></div><div class="stat"><strong id="petanqueCount">—</strong><span>⚫⚪ Pétanque</span></div><div class="stat"><strong id="escapeCount">—</strong><span>🕵 Escape game</span></div></div>
           <h3 class="chart-title">Disponibilités par date</h3>
           <div id="dateBars" class="bars"><p class="muted">Chargement…</p></div>
           <div class="leader" id="leader">Les résultats apparaîtront ici.</div>
